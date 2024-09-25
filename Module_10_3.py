@@ -27,7 +27,7 @@ class Bank(threading.Thread):
             print(f"Запрос на {cash}")
             self.trans_down -= 1
             if self.lock.locked():    # Данное условие нужно, чтобы программа продолжила работать при закрытом счете
-                print("Запрос отклонен, недостаточно средств.\n")
+                print("Карта заблокирована, пополните баланс до 500\n")
             else:
                 if cash <= self.balance:    # проверка денег на балансе для снятия
                     self.balance -= cash
