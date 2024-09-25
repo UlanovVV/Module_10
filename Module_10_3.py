@@ -16,7 +16,7 @@ class Bank(threading.Thread):
             cash = randint(50, 500)
             self.balance += cash
             self.trans_up -= 1
-            if self.balance >= 500 and self.lock.locked():
+            if self.balance >= 500 and self.lock.locked():    # проверка денег на балансе для открытия счета
                 self.lock.release()
             print(f"Пополнение: {cash}. Баланс: {self.balance}.\n")
         sleep(0.01)
@@ -26,10 +26,10 @@ class Bank(threading.Thread):
             cash = randint(50, 500)
             print(f"Запрос на {cash}")
             self.trans_down -= 1
-            if self.lock.locked():
+            if self.lock.locked():    # Данное условие нужно, чтобы программа продолжила работать при закрытом счете
                 print("Запрос отклонен, недостаточно средств.\n")
             else:
-                if cash <= self.balance:
+                if cash <= self.balance:    # проверка денег на балансе для снятия
                     self.balance -= cash
                     print(f"Снятие:{cash}. Баланс: {self.balance}.\n")
                 else:
