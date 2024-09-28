@@ -7,11 +7,8 @@ def read_info(name):
     with open(name, 'r') as file:
         line = file.readline()
         while line:
-            all_data.append(line.split())
+            all_data.append(line)
             line = file.readline()
-    return all_data
-
-
 
 
 filenames = [f'./file {number}.txt' for number in range(1, 5)]
@@ -22,9 +19,6 @@ for filename in filenames:
 end = datetime.now()
 print(f'Время выполнения - {end - start} секунд')
 
-"""
-Время отработки - 16.4589
-"""
 
 # if __name__ == '__main__':
 #     with multiprocessing.Pool(processes=4) as pool:
