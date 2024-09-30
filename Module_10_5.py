@@ -20,9 +20,9 @@ end = datetime.now()
 print(f'Время выполнения - {end - start} секунд')
 
 
-# if __name__ == '__main__':
-#     with multiprocessing.Pool(processes=4) as pool:
-#         start = datetime.now()
-#         pool.map(read_info, filenames)
-#         end = datetime.now()
-#     print(f'Время выполнения - {end - start} секунд')
+if __name__ == '__main__':
+    with multiprocessing.Pool(processes=4) as pool:
+        start = datetime.now()
+        pool.map(read_info, filenames)
+        end = datetime.now()
+    print(f'Время выполнения - {end - start} секунд')
