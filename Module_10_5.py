@@ -24,5 +24,5 @@ print(f'Время выполнения - {end - start} секунд')
 #     with multiprocessing.Pool(processes=4) as pool:
 #         start = datetime.now()
 #         pool.map(read_info, filenames)
-#     end = datetime.now()
+#         end = datetime.now()
 #     print(f'Время выполнения - {end - start} секунд')
